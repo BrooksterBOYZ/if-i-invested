@@ -1,22 +1,45 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>If I Invested</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <h1>If I Invested...</h1>
+<div class="container">
+    <h1>📈 If I Invested...</h1>
 
-    <input id="amount" type="number" placeholder="Investment Amount">
+    <label>Investment Amount ($)</label>
+    <input type="number" id="amount" placeholder="1000">
 
-    <button onclick="calculate()">
+    <label>Select Stock</label>
+    <select id="stock">
+        <option value="AAPL">Apple (AAPL)</option>
+        <option value="MSFT">Microsoft (MSFT)</option>
+        <option value="NVDA">NVIDIA (NVDA)</option>
+        <option value="TSLA">Tesla (TSLA)</option>
+    </select>
+
+    <button onclick="calculateInvestment()">
         Calculate
     </button>
 
-    <p id="result"></p>
+    <div id="results" class="hidden">
+        <h2>Results</h2>
 
-    <script src="script.js"></script>
+        <p><strong>Stock:</strong> <span id="stockName"></span></p>
+        <p><strong>Buy Price:</strong> $<span id="buyPrice"></span></p>
+        <p><strong>Current Price:</strong> $<span id="currentPrice"></span></p>
+        <p><strong>Shares Purchased:</strong> <span id="shares"></span></p>
+        <p><strong>Current Value:</strong> $<span id="currentValue"></span></p>
+        <p><strong>Profit:</strong> $<span id="profit"></span></p>
+        <p><strong>Return:</strong> <span id="returnPercent"></span>%</p>
+    </div>
+</div>
+
+<script src="script.js"></script>
 
 </body>
 </html>
